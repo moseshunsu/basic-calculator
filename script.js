@@ -5,6 +5,9 @@ const additionButton = document.getElementById("addition");
 const substractionButton = document.getElementById("substraction");
 const multiplicationButton = document.getElementById("multiplication");
 const divisionButton = document.getElementById("division");
+const clearButton = document.getElementById("clear");
+const deleteButton = document.getElementById("delete");
+const decimalButton = document.getElementById("decimal");
 const equalToEl = document.getElementById("equals");
 
 const zeroEl = document.getElementById("zero");
@@ -20,6 +23,28 @@ const nineEl = document.getElementById("nine");
 
 let expressionVariable = "";
 let storedNumber = "";
+// let zeroChecker = 0;
+// textArea.value = 0;
+
+clearButton.addEventListener("click", function () {
+  textArea.value = "";
+});
+
+deleteButton.addEventListener("click", function () {
+  textArea.value.length === ""
+    ? ""
+    : (textArea.value = textArea.value.substring(0, textArea.value.length - 1));
+});
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Backspace") {
+    textArea.value.length === ""
+      ? ""
+      : (textArea.value = textArea.value.substring(
+          0,
+          textArea.value.length - 1
+        ));
+  }
+});
 
 zeroEl.addEventListener("click", function () {
   textArea.value += 0;
