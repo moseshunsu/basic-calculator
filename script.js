@@ -26,6 +26,15 @@ let storedNumber = "";
 // let zeroChecker = 0;
 // textArea.value = 0;
 
+decimalButton.addEventListener("click", function () {
+  textArea.value += ".";
+});
+document.addEventListener("keydown", function (e) {
+  if (e.key === ".") {
+    textArea.value += ".";
+  }
+});
+
 clearButton.addEventListener("click", function () {
   textArea.value = "";
 });
